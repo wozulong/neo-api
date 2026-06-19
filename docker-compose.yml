@@ -3,12 +3,10 @@ services:
     image: pengzhile/new-api:latest
     container_name: neo-api
     restart: always
-    command: --log-dir /app/logs
     ports:
       - "3000:3000"
     volumes:
       - ./data/neo-api:/data
-      - ./logs:/app/logs
     env_file: neo-api.env
     depends_on:
       - redis
